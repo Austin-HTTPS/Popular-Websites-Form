@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Popular Websites Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+
+<body>
+	<section class="section">
+    {% if request.args.get("msg") in msgs %}
+    <div class="notification is-primary is-light">
+      {{ msgs[request.args.get("msg")] }}
+    </div>
+    {% endif %}
+		<div class="columns">
+
+      <div class="column">
+        <h1 class="title">Popular Websites Form</h1>
+		    <h2 class="subtitle">By: BD103</h2>
+
+			  <form action="submit" method="POST">
+				  <div class="field">
+					  <label class="label">Website URL</label>
+            <div class="control">
+              <input class="input" type="url" name="url" placeholder="google.com">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input class="button is-primary" type="submit">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h3>About</h3>
+          <p>This website is a simple program that collects popular websites. I'm creating an <em>internet</em> based game, and I want to implement some of these sites. The problem is, I can only come up with so many of them before I run out of ideas. Because of this, I created this program that verifies and collects fun, popular websites. I will look through this every now and then, and have created a check to make sure that the websites exist. Please keep these sites SFW.</p>
+
+          <h4>Example Sites</h4>
+          <ul>
+            <li>https://google.com</li>
+            <li>https://replit.com</li>
+            <li>https://pypi.org</li>
+            <li>https://bd103.repl.co</li>
+            <li>https://spotify.com</li>
+            <li>https://wikipedia.org</li>
+            <li>https://youtube.com</li>
+            <li>https://microsoft.com</li>
+            <li>https://minecraft.net</li>
+            <li>https://apple.com</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>This program is by <strong><a href="https://github.com/BD103" target="_blank">BD103</a></strong> and is licensed under <a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>.</p>
+      <a href="https://bulma.io" target="_blank"><img src="https://bulma.io/images/made-with-bulma--black.png" alt="Made with Bulma" width="128" height="24"></a>
+    </div>
+  </footer>
+</body>
+
+</html>

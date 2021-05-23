@@ -1,0 +1,1 @@
+ParseResult(scheme='', netloc='', path='google.com', params='', query='', fragment='')
